@@ -1,0 +1,85 @@
+EdgeResistance 100 0
+EwhBaseStruts 0 80 0 45
+
+#----------------------------------------------------------------------
+# Virtual Desktop Settings
+#----------------------------------------------------------------------
+DesktopSize 1x1
+EdgeScroll 100 100
+EdgeThickness 1
+
+Module FvwmPager 0 7
+Style FvwmPager Sticky, StaysOnTop, !Title
+Style FvwmPager BorderWidth 0, HandleWidth 0
+*FvwmPager:Geometry 800x45-0+0
+*FvwmPager:Rows 1
+*FvwmPager:Columns 8
+*FvwmPager:WindowBorderWidth 0
+
+*FvwmPager:DeskColor 0 rgb:aa/00/00
+*FvwmPager:DeskColor 1 orange
+*FvwmPager:DeskColor 2 yellow
+*FvwmPager:DeskColor 3 green
+*FvwmPager:DeskColor 4 blue
+*FvwmPager:DeskColor 5 rgb:2e/08/54
+*FvwmPager:DeskColor 6 rgb:7d/26/cd
+*FvwmPager:NoDeskHilight
+*FvwmPager:NoShapeLabels
+
+
+*FvwmPager:Label 0 "Red"
+*FvwmPager:Label 1 "Orange"
+*FvwmPager:Label 2 "Yellow"
+*FvwmPager:Label 3 "Green"
+*FvwmPager:Label 4 "Blue"
+*FvwmPager:Label 5 "Indigo"
+*FvwmPager:Label 6 "Violet"
+*FvwmPager:Label 7 "White"
+
+
+DestroyModuleConfig FvwmBacker:*
+*FvwmBacker: Command (Desk 0, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/red.png
+*FvwmBacker: Command (Desk 1, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/orange.png
+*FvwmBacker: Command (Desk 2, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/yellow.png
+*FvwmBacker: Command (Desk 3, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/green.png
+*FvwmBacker: Command (Desk 4, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/blue.png
+*FvwmBacker: Command (Desk 5, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/indigo.png
+*FvwmBacker: Command (Desk 6, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/purple.png
+*FvwmBacker: Command (Desk 7, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/white.png
+
+AddToFunc StartFunction I Module FvwmBacker
+
+AddToMenu MainMenu "Main Menu" Title
+  + "" Nop
+  + "Terminal" Exec exec xterm -font -*-fixed-bold-r-*-*-18-*-*-*-*-*-iso8859-*
+  + "Top" Exec exec xterm -e top 
+  + "Firefox" Exec exec firefox http://www.google.com
+  + "" Nop
+  + "SSH to Linigrator00" Exec exec xterm -e ssh -l linbuilder 172.30.8.213
+  + "SSH to Linigrator01" Exec exec xterm -e ssh -l linbuilder 172.30.8.212
+  + "" Nop
+  + "Restart FVWM" Restart
+  + "Shut Down" Exec shutdown -P 0 "Goodbye"
+
+
+AddToMenu WindowMenu "Windowing Menu" Title
+  + "" Nop
+  + "Red" MoveToDesk 0 0
+  + "Orange" MoveToDesk 0 1
+  + "Yellow" MoveToDesk 0 2
+  + "Green" MoveToDesk 0 3
+  + "Blue" MoveToDesk 0 4
+  + "Indigo" MoveToDesk 0 5
+  + "Violet" MoveToDesk 0 6
+  + "White" MoveToDesk 0 7
+
+  
+Mouse 0 R N Popup MainMenu
+
+Mouse 0 2 A ResizeMove 100 93 0 4
+Mouse 0 4 A Close 
+Mouse 0 5 A Move 0 0
+Mouse 0 5 A ResizeMove 49 93 0 4
+Mouse 0 6 A ResizeMove 49 93 50 4
+Mouse 0 1 A Popup WindowMenu
+
