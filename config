@@ -11,18 +11,21 @@ EdgeThickness 1
 Module FvwmPager 0 7
 Style FvwmPager Sticky, StaysOnTop, !Title
 Style FvwmPager BorderWidth 0, HandleWidth 0
-*FvwmPager:Geometry 800x45-0+0
+*FvwmPager:Geometry 400x50-0+0
 *FvwmPager:Rows 1
 *FvwmPager:Columns 8
-*FvwmPager:WindowBorderWidth 0
+*FvwmPager:WindowBorderWidth 2
+*FvwmPager: Font none 
 
-*FvwmPager:DeskColor 0 rgb:aa/00/00
-*FvwmPager:DeskColor 1 orange
-*FvwmPager:DeskColor 2 yellow
-*FvwmPager:DeskColor 3 green
-*FvwmPager:DeskColor 4 blue
-*FvwmPager:DeskColor 5 rgb:2e/08/54
-*FvwmPager:DeskColor 6 rgb:7d/26/cd
+*FvwmPager:DeskPixmap 0 $[HOME]/.fvwm/backgrounds/1-small.xpm
+*FvwmPager:DeskPixmap 1 $[HOME]/.fvwm/backgrounds/2-small.xpm
+*FvwmPager:DeskPixmap 2 $[HOME]/.fvwm/backgrounds/3-small.xpm
+*FvwmPager:DeskPixmap 3 $[HOME]/.fvwm/backgrounds/4-small.xpm
+*FvwmPager:DeskPixmap 4 $[HOME]/.fvwm/backgrounds/5-small.xpm
+*FvwmPager:DeskPixmap 5 $[HOME]/.fvwm/backgrounds/6-small.xpm
+*FvwmPager:DeskPixmap 6 $[HOME]/.fvwm/backgrounds/7-small.xpm
+*FvwmPager:DeskPixmap 7 $[HOME]/.fvwm/backgrounds/8-small.xpm
+
 *FvwmPager:NoDeskHilight
 *FvwmPager:NoShapeLabels
 
@@ -59,7 +62,7 @@ AddToMenu MainMenu "Main Menu" Title
   + "SSH to Linigrator01" Exec exec xterm -e ssh -l linbuilder 172.30.8.212
   + "" Nop
   + "Restart FVWM" Restart
-  + "Shut Down" Exec shutdown -P 0 "Goodbye"
+  + "Shut Down" Quit
 
 
 AddToMenu WindowMenu "Windowing Menu" Title
