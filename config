@@ -41,7 +41,7 @@ Style FvwmPager BorderWidth 0, HandleWidth 0
 
 
 DestroyModuleConfig FvwmBacker:*
-*FvwmBacker: Command (Desk 0, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/red.png
+*FvwmBacker: Command (Desk 0, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.xpm
 *FvwmBacker: Command (Desk 1, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/orange.png
 *FvwmBacker: Command (Desk 2, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/yellow.png
 *FvwmBacker: Command (Desk 3, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/green.png
@@ -86,3 +86,11 @@ Mouse 0 5 A ResizeMove 49 93 0 4
 Mouse 0 6 A ResizeMove 49 93 50 4
 Mouse 0 1 A Popup WindowMenu
 
+DestroyDecor GenesisDecor
+AddToDecor GenesisDecor
++ TitleStyle LeftJustified Height 22
++ ButtonStyle 5 \
+    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) \
+    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) 
+
+Style "*" UseDecor GenesisDecor
