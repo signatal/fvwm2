@@ -42,13 +42,13 @@ Style FvwmPager BorderWidth 0, HandleWidth 0
 
 DestroyModuleConfig FvwmBacker:*
 *FvwmBacker: Command (Desk 0, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.xpm
-*FvwmBacker: Command (Desk 1, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/orange.png
-*FvwmBacker: Command (Desk 2, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/yellow.png
-*FvwmBacker: Command (Desk 3, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/green.png
-*FvwmBacker: Command (Desk 4, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/blue.png
-*FvwmBacker: Command (Desk 5, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/indigo.png
-*FvwmBacker: Command (Desk 6, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/purple.png
-*FvwmBacker: Command (Desk 7, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/white.png
+*FvwmBacker: Command (Desk 1, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
+*FvwmBacker: Command (Desk 2, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
+*FvwmBacker: Command (Desk 3, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
+*FvwmBacker: Command (Desk 4, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
+*FvwmBacker: Command (Desk 5, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
+*FvwmBacker: Command (Desk 6, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
+*FvwmBacker: Command (Desk 7, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
 
 AddToFunc StartFunction I Module FvwmBacker
 
@@ -79,11 +79,11 @@ AddToMenu WindowMenu "Windowing Menu" Title
   
 Mouse 0 R N Popup MainMenu
 
-Mouse 0 2 A ResizeMove 100 93 0 4
+Mouse 0 2 A ResizeMove 99 93 0 5
 Mouse 0 4 A Close 
 Mouse 0 5 A Move 0 0
-Mouse 0 5 A ResizeMove 49 93 0 4
-Mouse 0 6 A ResizeMove 49 93 50 4
+Mouse 0 5 A ResizeMove 49 93 0 5
+Mouse 0 6 A ResizeMove 49 93 50 5
 Mouse 0 1 A Popup WindowMenu
 
 DestroyDecor GenesisDecor
