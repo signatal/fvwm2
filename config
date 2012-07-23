@@ -92,5 +92,10 @@ AddToDecor GenesisDecor
 + ButtonStyle 5 \
     ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) \
     ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) 
++ TitleStyle AllInactive MultiPixmap \
+    Main AdjustedPixmap $[HOME]/.fvwm/backgrounds/inactive-titlebar.xpm
++ TitleStyle AllActive MultiPixmap \
+    Main AdjustedPixmap $[HOME]/.fvwm/backgrounds/active-titlebar.xpm
+     
 
 Style "*" UseDecor GenesisDecor
