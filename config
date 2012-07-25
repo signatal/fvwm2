@@ -58,6 +58,9 @@ AddToMenu MainMenu "Main Menu" Title
   + "Top" Exec exec xterm -e top 
   + "Firefox" Exec exec firefox http://www.google.com
   + "" Nop
+  + "Tomato" Exec exec $[HOME]/.fvwm/scripts/tomato.pl
+  + "Break" Exec exec $[HOME]/.fvwm/scripts/tomato.pl
+  + "" Nop
   + "SSH to Linigrator00" Exec exec xterm -e ssh -l linbuilder 172.30.8.213
   + "SSH to Linigrator01" Exec exec xterm -e ssh -l linbuilder 172.30.8.212
   + "" Nop
@@ -67,14 +70,14 @@ AddToMenu MainMenu "Main Menu" Title
 
 AddToMenu WindowMenu "Windowing Menu" Title
   + "" Nop
-  + "Red" MoveToDesk 0 0
-  + "Orange" MoveToDesk 0 1
-  + "Yellow" MoveToDesk 0 2
-  + "Green" MoveToDesk 0 3
-  + "Blue" MoveToDesk 0 4
-  + "Indigo" MoveToDesk 0 5
-  + "Violet" MoveToDesk 0 6
-  + "White" MoveToDesk 0 7
+  + "Lamb Lies Down on Broadway" MoveToDesk 0 0
+  + "Wind & Wuthering" MoveToDesk 0 1
+  + "Calling All Stations" MoveToDesk 0 2
+  + "Invisible Touch" MoveToDesk 0 3
+  + "And Then There Were Three" MoveToDesk 0 4
+  + "Foxtrot" MoveToDesk 0 5
+  + "Abacab" MoveToDesk 0 6
+  + "Genesis" MoveToDesk 0 7
 
   
 Mouse 0 R N Popup MainMenu
