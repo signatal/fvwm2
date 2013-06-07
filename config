@@ -8,36 +8,28 @@ DesktopSize 1x1
 EdgeScroll 100 100
 EdgeThickness 1
 
-Module FvwmPager 0 7
-Style FvwmPager Sticky, StaysOnTop, !Title
+Module FvwmPager 0 3
+Style FvwmPager Sticky, StaysOnBottom, !Title
 Style FvwmPager BorderWidth 0, HandleWidth 0
-*FvwmPager:Geometry 400x50-0+0
-*FvwmPager:Rows 1
-*FvwmPager:Columns 8
+*FvwmPager:Geometry 100x100-0-0
+*FvwmPager:Rows 2
+*FvwmPager:Columns 2
 *FvwmPager:WindowBorderWidth 2
 *FvwmPager: Font none 
 
 *FvwmPager:DeskPixmap 0 $[HOME]/.fvwm/backgrounds/1-small.xpm
 *FvwmPager:DeskPixmap 1 $[HOME]/.fvwm/backgrounds/2-small.xpm
-*FvwmPager:DeskPixmap 2 $[HOME]/.fvwm/backgrounds/3-small.xpm
-*FvwmPager:DeskPixmap 3 $[HOME]/.fvwm/backgrounds/4-small.xpm
-*FvwmPager:DeskPixmap 4 $[HOME]/.fvwm/backgrounds/5-small.xpm
-*FvwmPager:DeskPixmap 5 $[HOME]/.fvwm/backgrounds/6-small.xpm
-*FvwmPager:DeskPixmap 6 $[HOME]/.fvwm/backgrounds/7-small.xpm
-*FvwmPager:DeskPixmap 7 $[HOME]/.fvwm/backgrounds/8-small.xpm
+*FvwmPager:DeskPixmap 2 $[HOME]/.fvwm/backgrounds/6-small.xpm
+*FvwmPager:DeskPixmap 3 $[HOME]/.fvwm/backgrounds/7-small.xpm
 
 *FvwmPager:NoDeskHilight
 *FvwmPager:NoShapeLabels
 
 
-*FvwmPager:Label 0 "Red"
-*FvwmPager:Label 1 "Orange"
-*FvwmPager:Label 2 "Yellow"
-*FvwmPager:Label 3 "Green"
-*FvwmPager:Label 4 "Blue"
-*FvwmPager:Label 5 "Indigo"
-*FvwmPager:Label 6 "Violet"
-*FvwmPager:Label 7 "White"
+*FvwmPager:Label 0 "Lamb"
+*FvwmPager:Label 1 "Wind"
+*FvwmPager:Label 2 "Foxtrot"
+*FvwmPager:Label 3 "Abacab"
 
 
 DestroyModuleConfig FvwmBacker:*
@@ -45,10 +37,6 @@ DestroyModuleConfig FvwmBacker:*
 *FvwmBacker: Command (Desk 1, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
 *FvwmBacker: Command (Desk 2, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
 *FvwmBacker: Command (Desk 3, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
-*FvwmBacker: Command (Desk 4, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
-*FvwmBacker: Command (Desk 5, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
-*FvwmBacker: Command (Desk 6, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
-*FvwmBacker: Command (Desk 7, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
 
 AddToFunc StartFunction I Module FvwmBacker
 
@@ -59,10 +47,9 @@ AddToMenu MainMenu "Main Menu" Title
   + "Firefox" Exec exec firefox http://www.google.com
   + "" Nop
   + "Tomato" Exec exec $[HOME]/.fvwm/scripts/tomato.pl
-  + "Break" Exec exec $[HOME]/.fvwm/scripts/tomato.pl
+  + "Break" Exec exec $[HOME]/.fvwm/scripts/break.pl
   + "" Nop
-  + "SSH to Linigrator00" Exec exec xterm -e ssh -l linbuilder 172.30.8.213
-  + "SSH to Linigrator01" Exec exec xterm -e ssh -l linbuilder 172.30.8.212
+  + "SSH to LewisManor" Exec exec xterm -e ssh -l jr lewismanor.com
   + "" Nop
   + "Restart FVWM" Restart
   + "Shut Down" Quit
@@ -72,29 +59,41 @@ AddToMenu WindowMenu "Windowing Menu" Title
   + "" Nop
   + "Lamb Lies Down on Broadway" MoveToDesk 0 0
   + "Wind & Wuthering" MoveToDesk 0 1
-  + "Calling All Stations" MoveToDesk 0 2
-  + "Invisible Touch" MoveToDesk 0 3
-  + "And Then There Were Three" MoveToDesk 0 4
-  + "Foxtrot" MoveToDesk 0 5
-  + "Abacab" MoveToDesk 0 6
-  + "Genesis" MoveToDesk 0 7
+  + "Foxtrot" MoveToDesk 0 2
+  + "Abacab" MoveToDesk 0 3
+  + "" Nop
+  + "Restart FVWM" Restart
 
   
 Mouse 0 R N Popup MainMenu
 
-Mouse 0 2 A ResizeMove 99 93 0 5
+Mouse 0 2 A ResizeMove 99 96 0 0
 Mouse 0 4 A Close 
-Mouse 0 5 A Move 0 0
-Mouse 0 5 A ResizeMove 49 93 0 5
-Mouse 0 6 A ResizeMove 49 93 50 5
+
+Mouse 0 3 A ResizeMove 49 96 0 0
+Mouse 0 5 A ResizeMove 49 96 50 0
+
 Mouse 0 1 A Popup WindowMenu
 
 DestroyDecor GenesisDecor
 AddToDecor GenesisDecor
-+ TitleStyle LeftJustified Height 22
-+ ButtonStyle 5 \
++ TitleStyle LeftJustified Height 42
++ ButtonStyle 3 \
     ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) \
-    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) 
+    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) \
+    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) 
++ ButtonStyle 5 \
+    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) \
+    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) \
+    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) 
++ ButtonStyle 4 \
+    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/close.xpm -- Flat) \
+    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/close.xpm -- Flat) \
+    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/close.xpm -- Flat) 
++ ButtonStyle 2 \
+    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm) \
+    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm) \
+    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm)
 + TitleStyle AllInactive MultiPixmap \
     Main AdjustedPixmap $[HOME]/.fvwm/backgrounds/inactive-titlebar.xpm
 + TitleStyle AllActive MultiPixmap \
@@ -102,3 +101,4 @@ AddToDecor GenesisDecor
      
 
 Style "*" UseDecor GenesisDecor
+
