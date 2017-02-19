@@ -33,10 +33,10 @@ Style FvwmPager BorderWidth 0, HandleWidth 0
 
 
 DestroyModuleConfig FvwmBacker:*
-*FvwmBacker: Command (Desk 0, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.xpm
+*FvwmBacker: Command (Desk 0, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
 *FvwmBacker: Command (Desk 1, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/2.png
-*FvwmBacker: Command (Desk 2, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
-*FvwmBacker: Command (Desk 3, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/1.png
+*FvwmBacker: Command (Desk 2, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/3.png
+*FvwmBacker: Command (Desk 3, Page 0 0) Exec fvwm-root $[HOME]/.fvwm/backgrounds/4.png
 
 AddToFunc StartFunction I Module FvwmBacker
 
