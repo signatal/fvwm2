@@ -1,26 +1,39 @@
+#------------------------------------------------------------------------------
+# @file      config
+# @author    JR Lewis
+# @date      2017.02.19
+#
+# @brief     This configuration is a customized setup for JR's window manager. 
+#            Built on top of fvwm, it's very fast and simple. It relies on 
+#            users knowing how to use the terminal. 
+#------------------------------------------------------------------------------
 EdgeResistance 100 0
 EwhBaseStruts 0 80 0 45
 
-#----------------------------------------------------------------------
+#------------------------------------------------------------------------------
 # Virtual Desktop Settings
-#----------------------------------------------------------------------
+#------------------------------------------------------------------------------
 DesktopSize 1x1
 EdgeScroll 100 100
 EdgeThickness 1
 
+
+#------------------------------------------------------------------------------
+# 
+#------------------------------------------------------------------------------
 Module FvwmPager 0 3
 Style FvwmPager Sticky, StaysOnBottom, !Title
 Style FvwmPager BorderWidth 0, HandleWidth 0
 *FvwmPager:Geometry 100x100-0-0
 *FvwmPager:Rows 2
 *FvwmPager:Columns 2
-*FvwmPager:WindowBorderWidth 2
+*FvwmPager:WindowBorderWidth 1
 *FvwmPager: Font none 
 
-*FvwmPager:DeskPixmap 0 $[HOME]/.fvwm/backgrounds/1-small.xpm
-*FvwmPager:DeskPixmap 1 $[HOME]/.fvwm/backgrounds/2-small.xpm
-*FvwmPager:DeskPixmap 2 $[HOME]/.fvwm/backgrounds/6-small.xpm
-*FvwmPager:DeskPixmap 3 $[HOME]/.fvwm/backgrounds/7-small.xpm
+*FvwmPager:DeskPixmap 0 $[HOME]/.fvwm/backgrounds/tile-purple.png
+*FvwmPager:DeskPixmap 1 $[HOME]/.fvwm/backgrounds/tile-blue.png
+*FvwmPager:DeskPixmap 2 $[HOME]/.fvwm/backgrounds/tile-green.png
+*FvwmPager:DeskPixmap 3 $[HOME]/.fvwm/backgrounds/tile-red.png
 
 *FvwmPager:NoDeskHilight
 *FvwmPager:NoShapeLabels
@@ -42,12 +55,9 @@ AddToFunc StartFunction I Module FvwmBacker
 
 AddToMenu MainMenu "Main Menu" Title
   + "" Nop
-  + "Terminal" Exec exec xterm -font -*-fixed-bold-r-*-*-18-*-*-*-*-*-iso8859-*
+  + "Terminal" Exec exec xterm
   + "Top" Exec exec xterm -e top 
   + "Firefox" Exec exec firefox http://www.google.com
-  + "" Nop
-  + "Tomato" Exec exec $[HOME]/.fvwm/scripts/tomato.pl
-  + "Break" Exec exec $[HOME]/.fvwm/scripts/break.pl
   + "" Nop
   + "SSH to LewisManor" Exec exec xterm -e ssh -l jr lewismanor.com
   + "" Nop
@@ -66,7 +76,6 @@ AddToMenu WindowMenu "Windowing Menu" Title
 
   
 Mouse 0 R N Popup MainMenu
-
 Mouse 0 2 A ResizeMove 99 96 0 0
 Mouse 0 4 A Close 
 
@@ -75,27 +84,28 @@ Mouse 0 5 A ResizeMove 49 96 50 0
 
 Mouse 0 1 A Popup WindowMenu
 
+
 DestroyDecor GenesisDecor
 AddToDecor GenesisDecor
-+ TitleStyle LeftJustified Height 42
-+ ButtonStyle 3 \
-    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) \
-    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) \
-    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) 
-+ ButtonStyle 5 \
-    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) \
-    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) \
-    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) 
+#+ TitleStyle LeftJustified Height 42
+#+ ButtonStyle 3 \
+#    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) \
+#    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) \
+#    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) 
+#+ ButtonStyle 5 \
+#    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) \
+#    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) \
+#    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) 
 + ButtonStyle 4 \
     ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/button-close.png -- Flat) \
     ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/button-down-close.png -- Flat) \
-    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/button-close.png -- Flat) 
-+ ButtonStyle 2 \
-    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm) \
-    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm) \
-    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm)
+    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/button-inactiveclose.png -- Flat) 
+#+ ButtonStyle 2 \
+#    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm) \
+#    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm) \
+#    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm)
 + TitleStyle AllInactive MultiPixmap \
-    Main AdjustedPixmap $[HOME]/.fvwm/backgrounds/inactive-titlebar.xpm
+    Main AdjustedPixmap $[HOME]/.fvwm/backgrounds/topbar-inactive.png
 + TitleStyle AllActive MultiPixmap \
     Main AdjustedPixmap $[HOME]/.fvwm/backgrounds/topbar.png
      
