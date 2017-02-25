@@ -76,18 +76,18 @@ AddToMenu WindowMenu "Windowing Menu" Title
 
   
 Mouse 0 R N Popup MainMenu
-Mouse 0 2 A ResizeMove 99 96 0 0
-Mouse 0 4 A Close 
+Mouse 0 2 A Close 
+Mouse 0 4 A Popup WindowMenu
 
 Mouse 0 3 A ResizeMove 49 96 0 0
 Mouse 0 5 A ResizeMove 49 96 50 0
-
-Mouse 0 1 A Popup WindowMenu
+Mouse 0 7 A ResizeMove 99 96 0 0
+Mouse 0 9 A ResizeMove 99 96 0 0
 
 
 DestroyDecor GenesisDecor
 AddToDecor GenesisDecor
-#+ TitleStyle LeftJustified Height 42
++ TitleStyle CenterJustified Height 22
 #+ ButtonStyle 3 \
 #    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) \
 #    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) \
@@ -96,12 +96,16 @@ AddToDecor GenesisDecor
 #    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) \
 #    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) \
 #    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) 
-+ ButtonStyle 4 \
-    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/button-close.png -- Flat) \
-    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/button-down-close.png -- Flat) \
-    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/button-inactiveclose.png -- Flat) 
++ ButtonStyle 2 \
+    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/close2.png -- Flat) \
+    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/button-pressed-close.png -- Flat) \
+    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/button-inactive-close.png -- Flat) 
 #+ ButtonStyle 2 \
 #    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm) \
+#    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm) \
+#    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm)
++ ButtonStyle 4 \
+    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/window-menu.png -- Flat) \
 #    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm) \
 #    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm)
 + TitleStyle AllInactive MultiPixmap \
