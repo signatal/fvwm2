@@ -79,40 +79,41 @@ Mouse 0 R N Popup MainMenu
 Mouse 0 2 A Close 
 Mouse 0 4 A Popup WindowMenu
 
-Mouse 0 3 A ResizeMove 49 96 0 0
-Mouse 0 5 A ResizeMove 49 96 50 0
-Mouse 0 7 A ResizeMove 99 96 0 0
-Mouse 0 9 A ResizeMove 99 96 0 0
+Mouse 0 1 A ResizeMove 49 96 0 0
+Mouse 0 3 A ResizeMove 49 96 50 0
+Mouse 0 5 A ResizeMove 99 96 0 0
+#Mouse 0 7 A ResizeMove 99 96 0 0
+#Mouse 0 9 A ResizeMove 99 96 0 0
 
 
 DestroyDecor GenesisDecor
 AddToDecor GenesisDecor
-+ TitleStyle CenterJustified Height 22
-#+ ButtonStyle 3 \
-#    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) \
-#    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) \
-#    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/left.xpm -- Flat) 
-#+ ButtonStyle 5 \
-#    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) \
-#    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) \
-#    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/right.xpm -- Flat) 
-+ ButtonStyle 2 \
-    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/close2.png -- Flat) \
-    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/button-pressed-close.png -- Flat) \
-    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/button-inactive-close.png -- Flat) 
-#+ ButtonStyle 2 \
-#    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm) \
-#    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm) \
-#    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm)
-+ ButtonStyle 4 \
-    ActiveUp     (Pixmap $[HOME]/.fvwm/backgrounds/window-menu.png -- Flat) \
-#    ActiveDown   (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm) \
-#    Inactive     (Pixmap $[HOME]/.fvwm/backgrounds/maximize.xpm)
++ TitleStyle CenterJustified
++ TitleStyle -- Flat
 + TitleStyle AllInactive MultiPixmap \
-    Main AdjustedPixmap $[HOME]/.fvwm/backgrounds/topbar-inactive.png
+    Main AdjustedPixmap $[HOME]/.fvwm/topbar/inactive.png -- Flat
 + TitleStyle AllActive MultiPixmap \
-    Main AdjustedPixmap $[HOME]/.fvwm/backgrounds/topbar.png
-     
-
+    Main AdjustedPixmap $[HOME]/.fvwm/topbar/active.png -- Flat
++ BorderStyle Simple -- NoInset Flat
++ ButtonStyle 1 \
+    ActiveUp     (Pixmap $[HOME]/.fvwm/topbar/buttons/left/active.png -- Flat) \
+    ActiveDown   (Pixmap $[HOME]/.fvwm/topbar/buttons/left/pressed.png -- Flat) \
+    Inactive     (Pixmap $[HOME]/.fvwm/topbar/buttons/left/inactive.png -- Flat)
++ ButtonStyle 3 \
+    ActiveUp     (Pixmap $[HOME]/.fvwm/topbar/buttons/right/active.png -- Flat) \
+    ActiveDown   (Pixmap $[HOME]/.fvwm/topbar/buttons/right/pressed.png -- Flat) \
+    Inactive     (Pixmap $[HOME]/.fvwm/topbar/buttons/right/inactive.png -- Flat)
++ ButtonStyle 5 \
+    ActiveUp     (Pixmap $[HOME]/.fvwm/topbar/buttons/maximize/active.png -- Flat) \
+    ActiveDown   (Pixmap $[HOME]/.fvwm/topbar/buttons/maximize/pressed.png -- Flat) \
+    Inactive     (Pixmap $[HOME]/.fvwm/topbar/buttons/maximize/inactive.png -- Flat) 
++ ButtonStyle 2 \
+    ActiveUp     (Pixmap $[HOME]/.fvwm/topbar/buttons/close/active.png -- Flat) \
+    ActiveDown   (Pixmap $[HOME]/.fvwm/topbar/buttons/close/pressed.png -- Flat) \
+    Inactive     (Pixmap $[HOME]/.fvwm/topbar/buttons/close/inactive.png -- Flat) 
++ ButtonStyle 4 \
+    ActiveUp     (Pixmap $[HOME]/.fvwm/topbar/buttons/wm/active.png -- Flat) \
+    ActiveDown   (Pixmap $[HOME]/.fvwm/topbar/buttons/wm/pressed.png -- Flat) \
+    Inactive     (Pixmap $[HOME]/.fvwm/topbar/buttons/wm/inactive.png -- Flat)
 Style "*" UseDecor GenesisDecor
 
